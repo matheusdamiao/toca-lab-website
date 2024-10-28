@@ -65,6 +65,7 @@ const CustomCursor = () => {
         window.removeEventListener('mousemove', moveCursor)
         window.removeEventListener('mouseover', debounceMouseOver);
         }
+ // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
 
