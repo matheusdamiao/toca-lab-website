@@ -1,8 +1,21 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
+import useWindowDimensions from '../../utils/useWindowDimensions';
 
 const CustomCursor = () => {
+
+    const [IsDesktop, setIsDesktop] = useState(false);
+
+    let size = useWindowDimensions();
+
+    useEffect(() => {
+      if(size){
+      if (size.width > 800) {   
+        setIsDesktop(true);
+      }
+      }
+  }, [size]);
 
     const cursorRef = useRef<HTMLDivElement>(null);
     const followerRef = useRef<HTMLDivElement>(null);
@@ -10,6 +23,7 @@ const CustomCursor = () => {
     const [lastBgColor, setLastBgColor] = useState<string | null>(null);
 
     const moveCursor = (e: MouseEvent):void =>{
+        if (!IsDesktop) return;
         gsap.to(cursorRef.current, {
             x: e.clientX,
             y: e.clientY
@@ -22,6 +36,7 @@ const CustomCursor = () => {
     }
 
     const handleMouseOver = (e: MouseEvent): void => {
+        if (!IsDesktop) return;
         const target = e.target as HTMLElement;
 
         // Get the background color of the element under the cursor
@@ -41,6 +56,7 @@ const CustomCursor = () => {
     };
     
     useEffect(()=>{
+        if(!IsDesktop) return
         gsap.set(
             cursorRef, {
                 xPercent: 100,
@@ -65,15 +81,15 @@ const CustomCursor = () => {
         window.removeEventListener('mousemove', moveCursor)
         window.removeEventListener('mouseover', debounceMouseOver);
         }
- // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+     // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[IsDesktop, lastBgColor])
 
-
+  if (!IsDesktop) return null; // Do not render cursor on mobile
 
   return (
-    <div className='absolute'>
-        <div ref={followerRef} style={{backgroundColor: cursorColor}} className='w-[60px] h-[60px] left-[22px] rounded-full fixed z-50' ></div>
-        <div ref={cursorRef}  className='width bg-no-repeat bg-cursor-image fixed h-[30px] w-[30px] z-50'></div>
+    <div className=' hidden lg:block absolute'>
+        <div ref={followerRef} style={{backgroundColor: cursorColor}} className='w-[60px] h-[60px] left-[22px] rounded-full fixed  z-[888888888]' ></div>
+        <div ref={cursorRef}  className='width bg-no-repeat bg-cursor-image fixed h-[30px] w-[30px] z-[999999999999] '></div>
     </div>
   )
 }

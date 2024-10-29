@@ -1,24 +1,23 @@
 'use client'
+import { useScroll, useTransform, motion} from 'framer-motion'
 import Image from 'next/image'
-import React, { useEffect, useRef, useState } from 'react'
-import logo from './../../../public/images/logo-branca.svg'
-import insta from './../../../public/images/ri_instagram-line.svg'
-import zap from './../../../public/images/logos_whatsapp-icon.svg'
-
-import { useScroll, useTransform, motion, useInView } from 'framer-motion'
 import Link from 'next/link'
-import useWindowDimensions from '../../../utils/useWindowDimensions'
-import useAnimateOnView from '../../../utils/useAnimationOnView'
+import React, { useRef, useState } from 'react'
+import logo from './../../public/images/logo-branca.svg'
+import insta from './../../public/images/ri_instagram-line.svg'
+import zap from './../../public/images/ic_outline-whatsapp.svg'
 
-const HeroSection = () => {
-  
-  const {TitleAnimation, animationControls, ref } = useAnimateOnView()
 
-  const refSection = useRef(null)
+
+const Menu = () => {
+
+
+    
+  const ref = useRef(null)
 
   // Detecta o scroll da página
   const { scrollYProgress } = useScroll({
-    target: refSection,
+    target: ref,
     offset: ["start end", "end start"]
   })
 
@@ -32,15 +31,13 @@ const HeroSection = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+
   const handleMenuMobile = () =>{
     setIsOpen(!isOpen)
   }
-
-
-
-
   return (
-    <div ref={refSection} className=' relative h-[85svh] z-[99999] bg-black'>
+    
+    <div className=' relative h-[100px] z-[99999] bg-black'>
           
         <motion.div
         style={{ backgroundColor: bgColor, height: menuSize}} className="fixed top-0 left-0 flex items-center justify-between w-full z-[999999]">  
@@ -64,7 +61,7 @@ const HeroSection = () => {
             <Link href='/projetos'> Projetos
              
             </Link>
-            <Link href='/#contact'>
+            <Link href='/#'>
                   Contato            
             </Link>
           </div>
@@ -80,7 +77,7 @@ const HeroSection = () => {
             <div  className={`absolute top-0 translate-x-[0px] duration-500 transition-all bg-menu-aberto text-white w-full h-[50svh]`}>
               <ul className='px-[20px] pt-[150px] flex flex-col gap-8 items-center ' >
                 <li className='py-spacing-lg px-spacing-xl'>
-                  <Link href='/#contact' onClick={()=> setIsOpen(!isOpen)} className='text-primary-base-white font-semibold hover:after:w-full after:w-0 relative  hover:after:h-[4px]  after:bg-yellow hover:after:block after:transition-all after:duration-700 after:absolute text-4xl after:bottom-[-10px]'>Contato</Link>
+                  <Link href='/sobre' onClick={()=> setIsOpen(!isOpen)} className='text-primary-base-white font-semibold hover:after:w-full after:w-0 relative  hover:after:h-[4px]  after:bg-yellow hover:after:block after:transition-all after:duration-700 after:absolute text-4xl after:bottom-[-10px]'>Contato</Link>
                 </li>
                 <li className='py-spacing-lg px-spacing-xl'>
                   <Link href='/projetos' onClick={()=> setIsOpen(!isOpen)} className='text-primary-base-white font-semibold hover:after:w-full after:w-0 relative  hover:after:h-[4px]  after:bg-yellow hover:after:block after:transition-all after:duration-700 after:absolute text-4xl after:bottom-[-10px]'>Projetos</Link>
@@ -95,40 +92,8 @@ const HeroSection = () => {
           }
 
         </motion.div>  
-      
-      <section ref={ref} className='flex flex-col items-center justify-center relative px-6 pt-10 z-[99] bg-transparent text-white gap-6 h-full lg:gap-10'>
-        <video src='/videos/hero-section.mp4' loop muted autoPlay className='absolute bg-black top-0 left-0 h-full opacity-45 right-0 w-full object-cover'></video>
-        
-        <motion.h1
-           initial='hidden'
-           animate={animationControls}
-            variants={{
-             hidden: {
-                 opacity: 0, y: '80px',
-               },
-               show: {
-                 opacity: 1, y: '0'
-               }
-            }}
-          transition={{delay: 0.1, duration: 1}}
-        className='font-extrabold text-[50px] lg:text-[80px] max-w-[850px] w-full z-50 text-center leading-[60px] lg:leading-[78px]'>Conteúdo para conectar e converter</motion.h1>
-        <motion.h2
-        
-        initial='hidden'
-        animate={animationControls}
-         variants={{
-          hidden: {
-              opacity: 0, y: '80px',
-            },
-            show: {
-              opacity: 1, y: '0'
-            }
-         }}
-       transition={{delay: 0.3, duration: 1}}
-       className='font-regular text-base leading-6 lg:leading-8 lg:text-[20px] max-w-[700px] z-[51] w-full text-center'>Somos o seu parceiro criativo para deixar a criação de conteúdo leve, com estratégias sob medida para atingir seu público-alvo com exatidão.</motion.h2>
-      </section>  
     </div>
   )
 }
 
-export default HeroSection
+export default Menu

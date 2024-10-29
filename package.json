@@ -11,6 +11,7 @@
   "dependencies": {
     "@portabletext/react": "^3.1.0",
     "@sanity/asset-utils": "^2.0.6",
+    "@typebot.io/nextjs": "^0.3.26",
     "embla-carousel": "^8.3.0",
     "embla-carousel-auto-scroll": "^8.3.0",
     "embla-carousel-react": "^8.3.0",

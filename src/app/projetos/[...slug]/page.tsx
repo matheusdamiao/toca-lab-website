@@ -8,6 +8,8 @@ import {PortableText} from '@portabletext/react'
 import Link from 'next/link';
 import ContactSection from '@/components/home/contactSection';
 import FooterSection from '@/components/home/footerSection';
+import CustomCursor from '@/components/customCursor';
+import Menu from '@/components/menu';
 
 
 const NEXT_PROJECT_QUERY = `*[_type == "post" && _createdAt > $createdAt] | order(_createdAt asc)[0]{
@@ -66,7 +68,9 @@ export default async function PageProject({params}: {params: {slug: string} }){
 
     
   return (
-    <div>
+    <div className='bg-black'>
+      <CustomCursor/>
+      <Menu/>
         <Image src={logo} width={180} height={95} alt='logo' className='absolute w-[120px] top-4 left-0 right-0 mx-auto z-40' />
       
 
@@ -75,29 +79,29 @@ export default async function PageProject({params}: {params: {slug: string} }){
               <video src={video.url} loop muted autoPlay className='absolute top-0 left-0 h-full opacity-25 right-0 w-full object-cover'></video>
               <section className='px-6 pt-10 flex flex-col text-white items-center justify-center z-50 gap-6 lg:gap-10'>
                 <h1 className='font-extrabold text-[50px] lg:text-[80px] max-w-[850px] w-full text-center leading-[60px] lg:leading-[78px]'>{post[0].nome}</h1> 
-                <PortableText value={post[0].post} /> 
+                <p className='text-center'><PortableText value={post[0].post} /> </p>
               </section>  
             </div>
 
           
-          <div className='flex flex-col py-[150px] items-center justify-center'>
+          <div className='px-6 flex flex-col py-[150px] items-center justify-center bg-black'>
              <video src={video.url}  controls className=' h-full  w-[800px] object-cover'></video>
              <video src={video2.url}  controls className=' h-full  w-[800px] object-cover'></video>
 
           </div>
           
 
-         <div className='max-w-5xl mx-auto flex-wrap flex items-center justify-between pb-[150px]'>
+         <div className='px-6 max-w-5xl mx-auto flex-wrap flex items-center justify-between pb-[150px]'>
             {previousPost && 
             <Link href={`${previousPost.slug}`} className='flex flex-col'>
               <div className='hover:cursor-pointer text-2xl text-white' >{previousPost.nome}</div>
-              {previousVideo && <video controls className='max-w-[500px] w-full' muted src={previousVideo.url}></video>}
+              {previousVideo && <video controls className='max-w-[400px] w-full' muted src={previousVideo.url}></video>}
             </Link>
             } 
              {nextPost && 
             <Link href={`${nextPost.slug}`}>
               <div className='hover:cursor-pointer text-2xl text-white' >{nextPost.nome}</div>
-              {nextVideo && <video controls className='max-w-[500px] w-full' muted  src={nextVideo.url}></video>}
+              {nextVideo && <video controls className='max-w-[400px] w-full' muted  src={nextVideo.url}></video>}
             </Link>
             } 
 

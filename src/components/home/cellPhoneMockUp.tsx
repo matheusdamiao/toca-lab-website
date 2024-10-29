@@ -25,13 +25,13 @@ const CellPhoneMockUp = ({videoPath}: MockProps) => {
         <div
          onMouseEnter={handleMouseEnter}
          onMouseLeave={handleMouseLeave}
-            className="relative mx-auto border-gray-900 dark:border-gray-900 bg-gray-900 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+            className="relative mx-auto border-gray-900 dark:border-gray-900 bg-gray-900 border-[14px] rounded-[2.5rem] h-[500px] w-[250px]">
             <div className="h-[32px] w-[3px] bg-gray-900 dark:bg-gray-900 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
             <div className="h-[46px] w-[3px] bg-gray-900 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
             <div className="h-[46px] w-[3px] bg-gray-900 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
             <div className="h-[64px] w-[3px] bg-gray-900 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-            <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-black  ">
-                <video autoPlay style={{ opacity: opacity }} ref={videoRef} src={videoPath} className='object-cover transition-opacity h-[572px]' loop muted></video>
+            <div className="rounded-[2rem] overflow-hidden w-[222px] h-[462px] bg-black  ">
+                <video autoPlay style={{ opacity: opacity }} ref={videoRef} src={videoPath} className='object-cover transition-opacity h-[462px]' loop muted></video>
             </div>
         </div>
     </div>

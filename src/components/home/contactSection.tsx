@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
+import { Standard } from "@typebot.io/nextjs";
 
 const ContactSection = () => {
   return (
-    <div className='bg-white h-full '>
+    <div id="contact" className='bg-white h-full '>
       
       <div className=' px-6 flex flex-col items-center justify-center pb-[50px] pt-[100px]'>
         <h3 className='text-sm text-[#B5B5B5] lg:text-lg'>Entre em contato </h3>
@@ -12,9 +14,13 @@ const ContactSection = () => {
              <br />
              Fale conosco hoje e vamos criar conteúdo que faz a diferença.
         </p>
-        <button className='bg-[#C23939] text-white max-w-[250px] py-4 px-4 w-full mt-8 '>
-            Entre em contato
-          </button>
+        <div className='w-full max-w-[550px] pt-2 lg:pt-10'>
+          <Standard
+            typebot="lead-generation-zay30q4"
+            style={{ width: "100%", height: "400px" }}
+          />
+        </div>
+
       </div>
 
       <video src="/videos/contact-video.mp4" className='h-[300px] object-cover w-full' autoPlay loop muted></video>

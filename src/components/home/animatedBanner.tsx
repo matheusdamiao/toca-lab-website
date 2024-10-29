@@ -13,9 +13,9 @@ const AnimatedBanner = () => {
         offset: ["start end", "end start"]
       });
 
-      const scrollX1 = useTransform(scrollYProgress, [1, 0], ["200px", "-500px"], {});
+      const scrollX1 = useTransform(scrollYProgress, [1, 0], ["100px", "-400px"], {});
 
-      const scrollX2 = useTransform(scrollYProgress, [1, 0], ["0px", "500px"], {});
+      const scrollX2 = useTransform(scrollYProgress, [1, 0], ["0px", "600px"], {});
 
 
 
@@ -31,7 +31,7 @@ const AnimatedBanner = () => {
 
           <div className='inline-block align-middle mx-8'>
             <Image src={bubble} alt='' width={18} height={18} className='inline-block' />
-            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  px-14'> Teste </p>
+            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  px-14'> Fotografia profissional </p>
         </div>
 
         <div className='inline-block align-middle'>
@@ -47,7 +47,7 @@ const AnimatedBanner = () => {
 
         <div className='inline-block align-middle mx-8'>
             <Image src={bubble} alt='' width={18} height={18} className='inline-block'/>
-            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Tráfego Pago </p>
+            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Fotografia profissional </p>
         </div>
 
 
@@ -59,18 +59,18 @@ const AnimatedBanner = () => {
 
         <div className='inline-block align-middle'>
             <Image src={bubble} alt='' width={18} height={18} className='inline-block'/>
-            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Teste 2 </p>
+            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Gravação e Produção de Vídeos </p>
         </div>
 
 
         <div className='inline-block align-middle'>
-            <Image src={bubble} alt='' width={18} height={18} className='inline-block'/>
-            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Teste 2 </p>
+            {/* <Image src={bubble} alt='' width={18} height={18} className='inline-block'/> */}
+            {/* <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Tráfego Pago </p> */}
         </div>
     
         <div className='inline-block align-middle'>
-            <Image src={bubble} alt='' width={18} height={18} className='inline-block'/>
-            <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Teste 2 </p>
+            {/* <Image src={bubble} alt='' width={18} height={18} className='inline-block'/> */}
+            {/* <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-14 '> Fotografia profissional </p> */}
         </div>
       
 
@@ -130,6 +130,8 @@ const AnimatedBanner = () => {
                 <Image src={bubble} alt='' width={18} height={18} className='inline-block'/>
                 <p className='text-[#C23939] font-bold text-xs lg:text-lg inline-block  mx-8 '> Edição Profissional e Criativa </p>
             </div>
+
+            
      </motion.div>
 
     </div>

@@ -4,6 +4,7 @@ import { div, video } from 'framer-motion/client';
 import { SanityDocument } from 'next-sanity';
 import React, { useRef } from 'react'
 import VideoProject from './videoProject';
+import Link from 'next/link';
 
 interface Project extends SanityDocument {
   _id: string;
@@ -32,9 +33,9 @@ const ProjectsSection = async () => {
           <p className='max-w-[600px] text-lg lg:text-2xl'>Conheça algumas das campanhas que construímos junto de nossos clientes. 
         Da direção de arte ao tráfego pago, tudo aqui é feito sob medida para atender ao seu negócio.
           </p>
-          <button className='bg-[#C23939] text-white max-w-[250px] py-4 px-4 w-full '>
+          <Link href='/projetos' className='bg-[#C23939] text-center text-white max-w-[250px] py-4 px-4 w-full '>
             Ver todos os projetos
-          </button>
+          </Link>
         </div>
         
       </div>

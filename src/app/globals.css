@@ -5,8 +5,16 @@
 @tailwind utilities;
 
 
+@media screen and (max-width: 800px) {
+    html {
+        cursor: default !important;
+    }
+}
+
+
 html {
     cursor: none;
+    scroll-behavior: smooth;
 }
 
 .no-scrollbar {
@@ -70,4 +78,20 @@ body {
 
 .embla__slide:nth-child(6) {
     margin-right: 150px;
+}
+
+
+.bg-menu-mobile {
+    background: rgba(43, 43, 43, 0.28);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10.3px);
+    -webkit-backdrop-filter: blur(10.3px);
+}
+
+
+.bg-menu-aberto {
+    background: rgba(121, 121, 121, 0.28);
+    box-shadow: 0 4px 30px rgba(131, 131, 131, 0.1);
+    backdrop-filter: blur(20.3px);
+    -webkit-backdrop-filter: blur(10.3px);
 }

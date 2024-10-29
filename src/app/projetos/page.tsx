@@ -6,8 +6,9 @@ import HeroTextSlider from "@/components/home/heroTextSlider";
 import AllProjetos from "@/components/projetos/allProjetos";
 import ContactSection from "@/components/home/contactSection";
 import FooterSection from "@/components/home/footerSection";
+import CustomCursor from "@/components/customCursor";
 
-const POSTS_QUERY = `*[_type == "post"]{_id, nome, slug, date, description, image1, video1, tags}|order(date desc)`;
+const POSTS_QUERY = `*[_type == "post"]{_id, nome, slug, date, description, image1, video1, tags}|order(date asc)`;
 
 
 interface Project extends SanityDocument {
@@ -30,9 +31,10 @@ export default async function IndexPage() {
     // console.log(video.url);
 
     return(
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-black">
             <HeroSectionsProjetos/>
             {/* <HeroTextSlider/> */}
+            <CustomCursor/>
             <AllProjetos posts={posts}/>
             <ContactSection/>
             <FooterSection/>

@@ -24,7 +24,7 @@ const AllProjetos = ({posts}: ProjectsClientProps) => {
 
 
   return (
-    <div className='flex flex-wrap w-full mx-auto max-w-7xl gap-16 py-[100px]'>
+    <div className='px-6 lg:px-0 flex flex-wrap w-full mx-auto max-w-7xl gap-16 py-[100px]'>
       {posts.map((project, index)=>{
             const video = getFileAsset(posts[index].video1.asset._ref, {projectId: 'n1j6o79d', dataset: 'production'});
             return(
