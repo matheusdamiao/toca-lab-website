@@ -24,7 +24,7 @@ const AboutSection = () => {
              }
           }}
         transition={{delay: 0.1, duration: 1}}
-        className='text-sm text-[#B5B5B5] lg:text-lg'>Quem somos</motion.h3>
+        className='text-sm text-[#B5B5B5] lg:text-lg '>Quem somos</motion.h3>
         <motion.h4
         
         initial='hidden'
@@ -38,7 +38,7 @@ const AboutSection = () => {
             }
          }}
        transition={{delay: 0.2, duration: 1}}
-       className='font-extrabold text-[40px] lg:text-[70px] leading-[120%] lg:w-[65%]'>Viciados em produzir conteúdo</motion.h4>
+       className='font-extrabold text-[40px] lg:text-[70px] leading-[120%] z-[899] lg:w-[50%]'>Viciados em produzir conteúdo</motion.h4>
         <motion.p
         
         initial='hidden'
@@ -52,14 +52,15 @@ const AboutSection = () => {
             }
          }}
        transition={{delay: 0.3, duration: 1}}
-        className='text-[#D1D1D1] lg:w-[60%] pt-4 lg:pt-10 text-[14px] lg:text-[20px]'>
+        className='text-[#D1D1D1] lg:w-[50%] pt-4 lg:pt-10 text-[14px] z-[99] lg:text-[20px]'>
         Produzimos conteúdos audiovisuais que não apenas chamam atenção, mas que também engajam e convertem.
         <br/> <br />
         Da ideia inicial à entrega final, cuidamos de tudo, 
         garantindo que cada peça de conteúdo seja única e impactante.
         </motion.p>
-      </section>
       <motion.video  src='/videos/about-section.mp4'  loop muted autoPlay className='z-40 lg:absolute pt-10 object-cover w-full h-[500px] lg:h-full lg:w-[450px] top-0 right-40'></motion.video>
+
+      </section>
     </div>
   )
 }
